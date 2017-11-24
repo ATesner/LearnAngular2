@@ -1,0 +1,11 @@
+<div *ngIf="genre; else elseTemplate" [title]="genre.libelle" 
+  [ngClass]="{ age3: genre.ageMinimum >= 3 && genre.ageMinimum < 10,age10: genre.ageMinimum >= 10 && genre.ageMinimum < 12,age12: genre.ageMinimum >= 12 && genre.ageMinimum < 14,age14: genre.ageMinimum >= 14 && genre.ageMinimum < 18,age18: genre.ageMinimum >= 18 }"
+  >
+  {{ genre.libelle }} - {{ appHelperService.getStringAge(genre.ageMinimum) }} 
+  <!-- <button (click)="genre.ajoute1AAgeMinimum()">+</button>
+  <button *ngIf="genre.ageMinimum > 3" (click)="genre.retire1AAgeMinimum()">-</button> -->
+</div>
+
+<ng-template #elseTemplate>
+  Ce genre n'existe pas
+</ng-template>

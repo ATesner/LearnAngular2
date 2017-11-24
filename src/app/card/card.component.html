@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="entete" >
+    <ng-content select="[entete]"></ng-content>
+  </div>
+  <div *ngIf="visible" class="content">
+      <ng-content select="[content]"></ng-content>
+  </div>
+  <br/>
+  <div class="footer">
+      <ng-content select="[footer]"></ng-content>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div style="text-align:center" *ngIf="genre else nodata">
+  <h2> Edit Genre : {{ genre.libelle }}</h2>
+
+  <form [formGroup]="formulaire" novalidate>
+    <strong>Libelle : </strong> <input type="text" formControlName="libelle" name="libelle" [value]="genre.libelle"/>
+    <div *ngIf="formulaire.controls.libelle.errors?.pattern">
+      Pattern incorrect
+    </div>
+    <h3> Series</h3>
+      <div *ngFor="let serie of genre.series">
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <strong>Titre : </strong>
+              </td>
+              <td>
+                <input type="text" name="titre" [value]="serie.titre" />  <br/>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Date de création : </strong> 
+              </td>
+              <td>
+                <input type="text"  name="dateCreation" [value]="serie.dateCreation" /> <br/> <br/>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div> 
+  </form>
+
+  <label>Form Status : {{ formulaire.status }}</label>
+</div>
+<ng-template #nodata>
+  Chargement...
+</ng-template>

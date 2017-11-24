@@ -1,0 +1,15 @@
+<app-card #maCarte [visible]="!isLarge">
+  <div entete>
+    <a > Back</a>
+    <a [routerLink]="['']" routerLinkActive="activeLink"> Genres</a>
+    <a [routerLink]="['pipe']" routerLinkActive="activeLink">Pipe Test</a>
+    <a [routerLink]="['directive']" routerLinkActive="activeLink">Directive</a>
+    <a [routerLink]="['template']" routerLinkActive="activeLink">Template</a>
+  </div>
+  <div content>
+    <router-outlet></router-outlet>
+  </div>
+  <div footer>
+    Ceci est le footer
+  </div>
+</app-card>

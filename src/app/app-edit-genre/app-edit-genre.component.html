@@ -1,0 +1,29 @@
+<div *ngIf="genreEnCoursEdition">
+  
+  <h3>Edition du genre {{genreEnCoursEdition.libelle}}</h3>
+
+  <form novalidate>
+
+    <label for="libelle">Libelle</label>
+    <input #libelleInput="ngModel" type="text" id="libelle" name="libelle" [(ngModel)]="genreEnCoursEdition.libelle" maxlength="10" pattern="[A-Z][a-z]+" required/> 
+    <div *ngIf="libelleInput.invalid"> Libelle invalid </div>
+    <div *ngIf="libelleInput.errors?.required"> Libelle doit etre non vide </div>
+    <div *ngIf="libelleInput.dirty"> Modifié </div>
+    <div *ngIf="libelleInput.touched"> Touch ! </div>
+    <br/>
+    <label>Age minimum : </label>
+    <!-- <span>{{genreEnCoursEdition.ageMinimum}}</span> -->
+    <!-- <button *ngIf="genreEnCoursEdition.ageMinimum > 3" type="button" (click)="decrementeAgeMinimum()">-</button> -->
+
+    <select name="ageMinimum" [(ngModel)]="genreEnCoursEdition.ageMinimum" >
+        <option *ngFor="let age of appHelperService.getListeAge()" [ngValue]="age.cle">{{age.text}}</option>
+      
+    </select>
+    <!-- <button type="button" (click)="incrementeAgeMinimum()">+</button> -->
+    <div>
+      <button type="button" (click)="resetForm()">Reset</button>
+      <button type="button" (click)="updateGenre()">Valider</button>
+    </div>
+    
+  </form>
+</div>

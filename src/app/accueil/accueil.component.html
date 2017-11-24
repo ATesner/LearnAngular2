@@ -1,0 +1,27 @@
+<div style="text-align:center">
+  <h2>Liste des {{ genres.length }} {{ genres.length > 1 ? 'genres' : 'genre' }} </h2>
+</div>
+<ul>
+  <li [style.background-color]="o ? 'grey': 'lightgrey'" *ngFor="let genre of genres; let i=index; let o=odd"
+    (click)="genreAEditer=genre">
+    <app-detail-genre [genre]="genre" ></app-detail-genre>
+  </li>
+</ul>
+<div  [style.background-color]="editor.enCoursEdition ? 'red': ''">
+  <app-edit-genre #editor [genre]="genreAEditer" (nouveauGenre)="updateGenre($event)"></app-edit-genre>
+</div>
+
+<div style="text-align:center">
+  <h2>Liste des Genres du JSON </h2>
+</div>
+<ul>
+  <li  *ngFor="let genre of genresData| async">
+    <label>Genre : {{ genre.libelle }}</label> <br>
+    <a [routerLink]="['genre', genre.id]">Edit genre</a> <br/>
+    <div *ngFor="let serie of genre.series">
+      <strong>{{ serie.titre}} </strong>  <br/>
+      <label>Date de création : </label> {{ serie.dateCreation}}
+    </div>
+    <br/>
+  </li>
+</ul>

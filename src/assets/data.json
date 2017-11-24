@@ -1,0 +1,39 @@
+[
+    {
+        "id":1,
+        "libelle": "Science-fiction",
+        "series": [
+            {
+                "id": 5,
+                "titre": "La quatrième dimension",
+                "dateCreation": "1959-09-10T12:00:00.000Z"
+            },
+            {
+                "id": 2,
+                "titre": "Start Trek",
+                "dateCreation": "1956-09-10T12:00:00.000Z"
+            },
+            {
+                "id": 3,
+                "titre": "Cosmos 1999",
+                "dateCreation": "1970-09-10T12:00:00.000Z"
+            }
+        ]
+    },
+    {
+        "id":2,
+        "libelle": "Action",
+        "series": [
+            {
+                "id": 4,
+                "titre": "Die Hard",
+                "dateCreation": "1959-09-10T12:00:00.000Z"
+            },
+            {
+                "id": 1,
+                "titre": "Mission impossible",
+                "dateCreation": "1956-09-10T12:00:00.000Z"
+            }
+        ]
+    }
+]

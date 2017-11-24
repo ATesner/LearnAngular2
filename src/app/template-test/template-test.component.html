@@ -1,0 +1,7 @@
+<ng-template #monTemplate let-item >
+  Le template affiche {{item.a}} et {{item.b}}
+</ng-template>
+
+<ng-container *ngTemplateOutlet="monTemplate; context:{$implicit: {a:1,b:2}}">
+
+</ng-container>
